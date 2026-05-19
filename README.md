@@ -192,51 +192,26 @@ Transaction tx_000002 | Prediction: FRAUD  | Fraud probability: 0.9127 | Actual 
 
 ## 11. Model Performance Reporting
 
-After running `train_model.py`, copy your actual model metrics here:
-
 ```text
-Accuracy: <paste your value here>
-F1-score: <paste your value here>
+Accuracy: 0.9755
+F1-score: 0.114358
 ```
 
 The F1-score is especially important because the dataset is highly imbalanced. A high accuracy alone can be misleading when fraudulent transactions are rare.
 
-## 12. Video Demo Instructions
-
-For the 2–3 minute demo video:
-
-1. Open three terminals side by side.
-2. Terminal 1: Faust Streams processor.
-3. Terminal 2: Output consumer.
-4. Terminal 3: Producer.
-5. Start them in this order:
-   - Faust processor
-   - Output consumer
-   - Producer
-6. Let the system run for about 60–90 seconds.
-7. Show that predictions are appearing live in the output consumer.
-8. Upload the video as unlisted YouTube, Google Drive, or OneDrive.
-9. Add the video link to this README before submission.
-
-Video link:
-
-```text
-<add your video link here>
-```
-
-## 13. Notes
+## 12. Notes
 
 - The Streams API requirement is satisfied by `src/app.py`, which uses Faust agents.
 - The ML model is trained offline using `src/train_model.py`.
 - The producer replays the dataset as live events at approximately 1 row per second.
 - The consumer reads the prediction topic and prints each result in real time.
 
-## 14. Stop Kafka
+## 13. Stop Kafka
 
 ```bash
 docker compose down
 ```
-## 15. Video Link
+## 14. Video Link
 
 ```bash
 https://youtu.be/L7C_8lYxafY
